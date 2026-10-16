@@ -554,7 +554,8 @@ body.menu-locked { overflow: hidden; }
   .story-heading { margin-top: 10px; }
 
   .events-head { flex-direction: row; align-items: flex-end; justify-content: space-between; }
-  .event-cards { grid-template-columns: repeat(3, 1fr); }
+  .event-cards { grid-template-columns: repeat(2, 1fr); }
+  .event-card:first-child { grid-column: 1 / -1; aspect-ratio: 16/9; }
 
   .glance-inner { flex-direction: row; align-items: center; }
   .glance-photo { flex: 1; }
@@ -590,5 +591,6 @@ body.menu-locked { overflow: hidden; }
   .gallery-head, .gallery-track { padding-left: 48px; padding-right: 48px; }
   .site-footer { padding: 90px 48px 32px; }
 
-  .event-card { aspect-ratio: 4/5; }
+  .event-cards { grid-template-columns: repeat(3, 1fr); }
+  .event-card, .event-card:first-child { grid-column: auto; aspect-ratio: 4/5; }
 }
