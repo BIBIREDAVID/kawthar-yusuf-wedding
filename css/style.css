@@ -362,7 +362,7 @@ body.menu-locked { overflow: hidden; }
 /* ========================================================
    EVENTS
    ======================================================== */
-.events { background: var(--cream-deep); padding: 90px 24px; }
+.events { background: var(--cream-deep); padding: 56px 24px; }
 .events-head {
   max-width: var(--container); margin: 0 auto 36px;
   display: flex; flex-direction: column; gap: 18px;
@@ -401,7 +401,7 @@ body.menu-locked { overflow: hidden; }
 /* ========================================================
    AT A GLANCE
    ======================================================== */
-.glance { max-width: var(--container); margin: 0 auto; padding: 90px 24px; }
+.glance { max-width: var(--container); margin: 0 auto; padding: 56px 24px; }
 .glance h2 { font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 32px; }
 .glance-inner { display: flex; flex-direction: column; gap: 28px; }
 .glance-photo img { border-radius: var(--radius); aspect-ratio: 4/3; object-fit: cover; width: 100%; }
@@ -418,15 +418,23 @@ body.menu-locked { overflow: hidden; }
 .glance-event strong { font-family: var(--font-serif); font-size: 1.05rem; }
 .glance-event small { color: var(--ink-soft); font-size: 0.78rem; }
 .glance-note { font-size: 0.82rem; color: var(--ink-soft); margin: 14px 0; }
-.dress-code { font-size: 1rem; line-height: 2.1; }
+.dress-code { font-size: 1rem; line-height: 1.9; }
 .dress-code .pill { margin: 0 2px; }
+.dress-code .nowrap { white-space: nowrap; display: inline-block; }
 
 /* ========================================================
    RSVP
    ======================================================== */
-.rsvp { padding: 90px 24px 100px; text-align: center; }
+.rsvp { padding: 56px 24px 70px; text-align: center; }
 .rsvp h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
-.heart-icon { color: var(--maroon); }
+.heart-icon {
+  color: var(--maroon);
+  display: inline-block;
+  font-weight: 400;
+  font-size: 0.78em;
+  vertical-align: 0.05em;
+  margin: 0 0.05em;
+}
 .rsvp-sub { color: var(--ink-soft); margin-top: 10px; font-size: 0.95rem; }
 
 .rsvp-inner {
