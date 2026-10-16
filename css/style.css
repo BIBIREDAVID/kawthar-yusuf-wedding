@@ -557,10 +557,6 @@ body.menu-locked { overflow: hidden; }
   .event-cards { grid-template-columns: repeat(2, 1fr); }
   .event-card:first-child { grid-column: 1 / -1; aspect-ratio: 16/9; }
 
-  .glance-inner { flex-direction: row; align-items: center; }
-  .glance-photo { flex: 1; }
-  .glance-photo img { height: 100%; }
-  .glance-content { flex: 1; }
 
   .rsvp-inner { flex-direction: row; align-items: stretch; }
   .rsvp-form, .rsvp-photo { flex: 1; }
@@ -593,4 +589,9 @@ body.menu-locked { overflow: hidden; }
 
   .event-cards { grid-template-columns: repeat(3, 1fr); }
   .event-card, .event-card:first-child { grid-column: auto; aspect-ratio: 4/5; }
+
+  .glance-inner { flex-direction: row; align-items: center; }
+  .glance-photo { flex: 1; }
+  .glance-photo img { height: 100%; }
+  .glance-content { flex: 1; }
 }
