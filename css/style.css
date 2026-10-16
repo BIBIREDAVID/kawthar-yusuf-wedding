@@ -358,6 +358,7 @@ body.menu-locked { overflow: hidden; }
   display: flex; flex-direction: column; gap: 18px;
 }
 .events-head h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
+.events-h-long { display: none; }
 .events-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .event-cards {
@@ -420,7 +421,7 @@ body.menu-locked { overflow: hidden; }
 
 .rsvp-inner {
   max-width: var(--container); margin: 40px auto 0;
-  display: flex; flex-direction: column; gap: 24px;
+  display: flex; flex-direction: column-reverse; gap: 24px;
   text-align: left;
 }
 .rsvp-form {
@@ -526,6 +527,8 @@ body.menu-locked { overflow: hidden; }
   .nav-rsvp { display: inline-flex; }
   .hero-sub-short { display: none; }
   .hero-sub-long { display: block; }
+  .events-h-short { display: none; }
+  .events-h-long { display: inline; }
   .countdown { display: block; }
 
   .invitation-inner { flex-direction: row; align-items: flex-start; gap: 36px; }
