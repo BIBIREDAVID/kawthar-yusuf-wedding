@@ -91,6 +91,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ================= GALLERY CAROUSEL ================= */
+  const galleryTrack = document.getElementById("galleryTrack");
+  const galleryPrev = document.getElementById("galleryPrev");
+  const galleryNext = document.getElementById("galleryNext");
+  if (galleryTrack) {
+    const scrollByCard = (dir) => {
+      const card = galleryTrack.querySelector("img, .gallery-cta");
+      const amount = card ? card.getBoundingClientRect().width + 14 : 240;
+      galleryTrack.scrollBy({ left: dir * amount, behavior: "smooth" });
+    };
+    galleryPrev.addEventListener("click", () => scrollByCard(-1));
+    galleryNext.addEventListener("click", () => scrollByCard(1));
+  }
+
   /* ================= COPY VENUE ADDRESS ================= */
   const copyBtn = document.getElementById("copyAddressBtn");
   if (copyBtn) {
