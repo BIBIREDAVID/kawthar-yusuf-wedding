@@ -512,13 +512,13 @@ body.menu-locked { overflow: hidden; }
 .gallery-track::-webkit-scrollbar { display: none; }
 .gallery-track img {
   flex: 0 0 auto;
-  width: 220px; height: 280px;
+  width: 220px; aspect-ratio: 1 / 1;
   object-fit: cover; border-radius: var(--radius-sm);
   scroll-snap-align: start;
 }
 .gallery-cta {
   flex: 0 0 auto;
-  width: 220px; height: 280px;
+  width: 220px; aspect-ratio: 1 / 1;
   background: var(--maroon); color: var(--white);
   border-radius: var(--radius-sm);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -585,7 +585,7 @@ body.menu-locked { overflow: hidden; }
   .form-row label { flex: 1; }
   .attend-toggle { flex-direction: row; }
 
-  .gallery-track img, .gallery-cta { width: 260px; height: 320px; }
+  .gallery-track img, .gallery-cta { width: 260px; }
 
   .footer-top { flex-direction: row; justify-content: space-between; }
   .footer-brand { max-width: 260px; }
