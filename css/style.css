@@ -220,8 +220,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .mobile-menu-links a {
   padding: 18px 4px;
   border-bottom: 1px solid var(--line);
-  font-size: 1.15rem;
-  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
 }
 .mobile-menu-rsvp {
   margin-top: 22px;
