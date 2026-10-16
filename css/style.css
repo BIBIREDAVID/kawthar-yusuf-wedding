@@ -281,12 +281,21 @@ body.menu-locked { overflow: hidden; }
    INVITATION + STORY  (two-column: carousel left / collage+quote right)
    ======================================================== */
 .invitation { padding: 70px 24px; max-width: var(--container); margin: 0 auto; }
-.invitation-inner { display: flex; flex-direction: column; gap: 56px; }
-.invitation-col-left, .invitation-col-right { display: flex; flex-direction: column; gap: 28px; }
+.invitation-inner { display: flex; flex-direction: column; gap: 28px; }
 .invitation-text { font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.4; margin: 18px 0 24px; }
 
+/* mobile: flatten the two columns into one sequence and reorder
+   copy -> collage (1 photo) -> story heading -> carousel; hide quote + 2nd photo */
+.invitation-col-left, .invitation-col-right { display: contents; }
+.invitation-copy { order: 1; }
+.story-collage { order: 2; }
+.story-heading { order: 3; }
+.story-carousel { order: 4; }
+.invitation-inner .quote-card { display: none; }
+.collage-secondary { display: none; }
+
 /* photo collage: "Where it began" + "Our first meet" */
-.story-collage { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.story-collage { display: grid; grid-template-columns: 1fr; gap: 14px; }
 .story-collage figure { position: relative; margin: 0; border-radius: var(--radius-sm); overflow: hidden; aspect-ratio: 4/5; }
 .story-collage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .story-collage::before, .story-collage figure::after {
@@ -532,7 +541,11 @@ body.menu-locked { overflow: hidden; }
   .countdown { display: block; }
 
   .invitation-inner { flex-direction: row; align-items: flex-start; gap: 36px; }
-  .invitation-col-left, .invitation-col-right { flex: 1; }
+  .invitation-col-left, .invitation-col-right { display: flex; flex-direction: column; gap: 28px; flex: 1; }
+  .invitation-copy, .story-collage, .story-heading, .story-carousel { order: 0; }
+  .invitation-inner .quote-card { display: flex; }
+  .collage-secondary { display: block; }
+  .story-collage { grid-template-columns: 1fr 1fr; }
   .invitation-copy { max-width: 400px; }
   .slide.active { grid-template-columns: 1fr 1fr; align-items: stretch; }
   .slide-media { aspect-ratio: auto; height: 100%; }
