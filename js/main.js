@@ -122,12 +122,49 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ================= RSVP FORM ================= */
+  // Google Apps Script Web App URL (see apps-script.gs for setup steps).
+  // Paste your deployed /exec URL here once it's ready.
+  const RSVP_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
   const rsvpForm = document.getElementById("rsvpForm");
   const rsvpSuccess = document.getElementById("rsvpSuccess");
-  rsvpForm.addEventListener("submit", (e) => {
+  const rsvpSubmitBtn = rsvpForm.querySelector('button[type="submit"]');
+
+  rsvpForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    rsvpForm.reset();
-    rsvpSuccess.hidden = false;
-    rsvpSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    const formData = new FormData(rsvpForm);
+    const payload = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      attending: formData.get("attending"),
+      message: formData.get("message"),
+    };
+
+    const originalLabel = rsvpSubmitBtn.innerHTML;
+    rsvpSubmitBtn.disabled = true;
+    rsvpSubmitBtn.textContent = "Sending...";
+
+    try {
+      if (RSVP_ENDPOINT && RSVP_ENDPOINT.startsWith("http")) {
+        // Apps Script web apps don't send CORS headers back, so the
+        // response is opaque; a successful network round-trip is enough.
+        await fetch(RSVP_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(payload),
+        });
+      }
+      rsvpForm.reset();
+      rsvpSuccess.hidden = false;
+      rsvpSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    } catch (err) {
+      alert("Something went wrong sending your RSVP. Please try again or contact Kawthar or Yusuf directly.");
+    } finally {
+      rsvpSubmitBtn.disabled = false;
+      rsvpSubmitBtn.innerHTML = originalLabel;
+    }
   });
 });
