@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ================= COUNTDOWN ================= */
-  const weddingDate = new Date("2026-12-17T10:00:00+01:00").getTime();
+  const weddingDate = new Date("2026-12-19T12:00:00+01:00").getTime();
   const elDays = document.getElementById("cd-days");
   const elHrs = document.getElementById("cd-hrs");
   const elMin = document.getElementById("cd-min");
