@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ================= RSVP FORM ================= */
   // Google Apps Script Web App URL (see apps-script.gs for setup steps).
   // Paste your deployed /exec URL here once it's ready.
-  const RSVP_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+  const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyg4JjiagEllQXgFKLgTE_ZRWvyZpfJOnF7ltAj_QxQxbw5gY-qa7uIEKyAyZJ0mwtG/exec";
 
   const rsvpForm = document.getElementById("rsvpForm");
   const rsvpSuccess = document.getElementById("rsvpSuccess");
