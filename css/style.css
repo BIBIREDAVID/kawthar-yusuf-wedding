@@ -242,7 +242,7 @@ body.menu-locked { overflow: hidden; }
   overflow: hidden;
 }
 .hero-media { position: absolute; inset: 0; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center;}
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 .hero-scrim {
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(20,15,10,0.15) 0%, rgba(20,15,10,0.25) 45%, rgba(15,10,8,0.85) 100%);
